@@ -1,0 +1,33 @@
+3000. Maximum Area of Longest Diagonal Rectangle
+--------------------------------------------------
+
+class Solution {
+    public int areaOfMaxDiagonal(int[][] dimensions) {
+        
+        double maxdiag = 0;
+        int maxaarea = 0;
+
+        for (int[] dimension: dimensions)
+        {
+            int len = dimension[0];
+            int width = dimension[1];
+
+            double diagonal = Math.sqrt(len * len + width * width);
+            int area = len * width;
+
+            if ( diagonal > maxdiag)
+
+        {
+            maxdiag = diagonal;
+            maxaarea = area;
+        }
+
+        else if (diagonal == maxdiag)
+        {
+            maxaarea = Math.max(maxaarea, area);
+        }
+        }
+        return maxaarea;
+
+    }
+}
